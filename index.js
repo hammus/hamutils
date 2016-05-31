@@ -26,11 +26,13 @@ var isFunction = function isFunction(value){return typeof value == 'function';};
 var isPromiseLike = function isPromiseLike(obj) {return obj && isFunction(obj.then);};
 var isObject = function isObject(value){return value != null && typeof value === 'object';};
 var isUndefined = function isUndefined(value) {return typeof value === 'undefined';};
+var isString = function(value) { return typeof value === 'string' || value instanceof String };
 
 module.exports = {
     isFunction: isFunction,
     isPromiseLike: isPromiseLike,
     isObject: isObject,
     isUndefined: isUndefined,
-    isDefined: function(value) {return !isUndefined(value);}
+    isDefined: function(value) {return !isUndefined(value);},
+    isString: isString
 }
